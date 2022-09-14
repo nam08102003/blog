@@ -7,18 +7,23 @@
     list-style-type: none;
 }
 
+body {
+    overflow-x: hidden;
+}
+
                 /* Header */
 .header {
     width: 100%;
     background: #fff;
+    margin: 0 auto;
 }
 .header .top {
-    width: 100%;
+    /* max-width: 100%; */
     height: 40px;
-    padding: 0 250px;
+    padding: 0 50px;
     background: #242424;
     display: flex;
-    justify-content: space-around;
+    justify-content: center;
     align-items: center;
 }
 .header .top .top-left {
@@ -77,11 +82,11 @@
     padding: 0 5px;
 }
 .header .navbar {
-    width: 100%;
+    max-width: 1200px;
     height: 100px;
-    padding: 0 250px;
     display: flex;
     align-items: center;
+    margin: 0 auto;
 }
 .header .navbar .web-name {
     flex: 18%;
@@ -168,6 +173,7 @@
     background: #fff;
 }
 .content .inner {
+    width: 100%;
     position: relative;
 }
 .content .inner .image-bg {
@@ -190,13 +196,14 @@
     z-index: 2;
 }
 .content .inner .text {
+    max-width: 1200px;
+    margin: 0 auto;
     top: 0;
     right: 0;
     left: 0;
     bottom: 0;
     z-index: 3;
     position: absolute;
-    margin-left: 250px;
     display: flex;
     align-items: center;
 }
@@ -209,7 +216,7 @@
     width: 140px;
     height: 40px;
     background: #fcb222;
-    right: 250px;
+    right: 10%;
     bottom: 0;
     z-index: 3;
     position: absolute;
@@ -226,25 +233,21 @@
     color: #242424;
 }
 .content .container {
+    max-width: 1200px;
     padding-top: 140px;
-    margin: 0 250px;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
+    margin: 0 auto;
 }
 .content .container .items {
-    width: 319px;
-    padding-top: 30px;
-}
-.content .container .items:nth-child(2),
-.content .container .items:nth-child(3),
-.content .container .items:nth-child(5),
-.content .container .items:nth-child(6) {
-    margin-left: 30px;
+    flex: 33.3333%;
+    margin-top: 30px;
+    padding: 0 10px;
 }
 .content .container .items .image-item {
-    width: 319px;
-    height: 215px;
+    width: 100%;
+    height: 250px;
     position: relative;
 }
 .content .container .items .image-item .image {
@@ -327,7 +330,7 @@
 .content .container .items .title {
     max-width: 319px;
     padding-top: 10px;
-    line-height: 2.4rem;
+    line-height: 2rem;
 }
 .content .container .items .title h4 {
     color: #242424;
@@ -368,7 +371,9 @@
     z-index: 2;
 }
 .footer .top .text {
-    margin-left: 250px;
+    width: 1200px;
+    left: 50%;
+    transform: translateX(-50%);
     position: absolute;
     z-index: 3;
     display: flex;
@@ -504,8 +509,9 @@
     border-top: 1px solid #747474;
 }
 .footer .bottom .copyright {
+    width: 1200px;
     display: flex;
-    margin: 0 250px;
+    margin: 0 auto;
     padding-top: 30px;
     justify-content: space-between;
 }
@@ -531,4 +537,86 @@
 }
 .footer .bottom .copyright .right a:hover {
     color: #fcb222;
+}
+
+
+@media ((min-width: 460px) and (max-width: 780px)) {
+    .header .navbar {
+        max-width: 760px;
+        margin: 0 auto;
+    }
+
+    .header .top-center {
+        display: none;
+    }
+
+    .header .navbar .interactive .call {
+        display: none;
+    }
+
+    .content .inner .text {
+        max-width: 760px;
+    }
+
+    .content .container {
+        max-width: 760px;
+    }
+
+    .footer .top .text {
+        max-width: 760px;
+    }
+
+    .footer .top .text .about .button a {
+        padding: 10px 20px;
+    }
+
+    .footer .bottom .copyright {
+        max-width: 760px;
+    }
+}
+
+
+@media (max-width: 460px) {
+    .header .navbar {
+        max-width: 460px;
+        margin: 0 auto;
+    }
+
+    .header .top {
+        justify-content: space-between;
+        padding: 0;
+    }
+
+    .header .top-center {
+        display: none;
+    }
+
+    .header .top-right .timing {
+        display: none !important;
+
+    }
+
+    .header .navbar .interactive .call {
+        display: none;
+    }
+
+    .content .inner .text {
+        max-width: 460px;
+    }
+
+    .content .container {
+        max-width: 460px;
+    }
+
+    .footer .top .text {
+        max-width: 460px;
+    }
+
+    .footer .top .text .about .button a {
+        padding: 10px 20px;
+    }
+
+    .footer .bottom .copyright {
+        max-width: 460px;
+    }
 }
